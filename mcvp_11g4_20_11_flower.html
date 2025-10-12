@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chúc mừng 20-10 | 11G4 MCVP</title>
+<style>
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background: linear-gradient(180deg, #fff5f9, #ffe8ef);
+  overflow: hidden;
+}
+section {
+  width: 100vw; height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease, transform 1s ease;
+  opacity: 0; transform: translateY(30px);
+  position: absolute; top: 0; left: 0;
+}
+section.active {
+  opacity: 1; transform: translateY(0);
+  z-index: 5;
+}
+h1 {
+  font-size: 2.3rem;
+  color: #e45a8d;
+  text-align: center;
+  margin-bottom: 20px;
+}
+p {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+  max-width: 80%;
+  line-height: 1.6;
+}
+button {
+  background: #ff9bbd;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  margin-top: 20px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+button:hover { background: #ff7aa3; }
+
+/* Ảnh trang 2 */
+.img-container {
+  width: 80%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+.img-container img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Animation hiện chữ */
+.fade-text {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeDown 2s forwards;
+}
+@keyframes fadeDown {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Thanh tìm kiếm */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.search-box input {
+  border: none; outline: none;
+  font-size: 1rem;
+  width: 200px;
+  margin-left: 10px;
+}
+
+/* Lời chúc riêng */
+#personalMessage {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #444;
+  padding: 20px;
+}
+
+/* Hoa rơi */
+.sakura {
+  position: fixed;
+  top: -10px;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- Trang 1 -->
+<section id="page1" class="active">
+  <h1>🌸 Chúc mừng 20-10 11G4 MCVP 🌸</h1>
+  <p>Bạn đã sẵn sàng chưa?</p>
+  <button onclick="nextPage(2)">Start</button>
+</section>
+
+<!-- Trang 2 -->
+<section id="page2">
+  <div class="img-container">
+    <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t1.15752-9/553112269_1170990681597465_1206101863126046614_n.png?_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_ohc=pluXhZHgVFsQ7kNvwGTpZlL&_nc_oc=Adn2y5ofE6biFQexHonnMZZNe4TAF25KXptmh8XS-9NNANXF-ea1zr81MnxVaGMQTQo&_nc_zt=23&_nc_ht=scontent.fhan14-4.fna&oh=03_Q7cD3gHnUgsVvfm6lL_L0ULVeQXbCxB09pcY9OALUSaFmfbqMg&oe=6913430B" alt="Ảnh lớp">
+  </div>
+  <p class="fade-text">Nhân ngày Phụ nữ Việt Nam 20-10 💐<br>
+  11G4 xin gửi những lời chúc tốt đẹp nhất đến tất cả các bạn nữ trong lớp.<br>
+  Chúc các bạn luôn xinh đẹp, tự tin, học giỏi và gặp nhiều niềm vui trong cuộc sống.<br>
+  Các bạn chính là những bông hoa tuyệt vời nhất của 11G4 💖</p>
+  <button onclick="nextPage(3)">Next</button>
+</section>
+
+<!-- Trang 3 -->
+<section id="page3">
+  <h1>🔍 Tìm tên của bạn</h1>
+  <div class="search-box">
+    <span>👤</span>
+    <input type="text" id="searchInput" placeholder="Nhập tên của bạn..." oninput="suggestName()">
+  </div>
+  <ul id="suggestions" style="list-style:none; margin-top:10px;"></ul>
+</section>
+
+<!-- Trang 4 -->
+<section id="page4">
+  <h1>💖 Lời chúc riêng 💖</h1>
+  <div id="personalMessage"></div>
+  <button onclick="nextPage(1)">Quay lại đầu</button>
+</section>
+
+<!-- Nhạc nền -->
+<audio id="bgm" autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/14/audio_0a1c50b4f5.mp3?filename=spring-lofi-112191.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const pages = document.querySelectorAll("section");
+function nextPage(n) {
+  pages.forEach(p => p.classList.remove("active"));
+  document.getElementById("page"+n).classList.add("active");
+  if(n === 2) document.getElementById("bgm").play();
+}
+
+// Gợi ý tên
+const names = ["Lưu Mai Huyền anh", "Nguyễn Ngân Hà Anh", "Phạm Hà Anh", "Trần Vũ Minh Anh", "Trương Ngọc Bảo Anh", "Nguyễn Phương Chi", "Lê Thùy Dương", "Bùi Việt Hà", "Nguyễn Bùi Ngọc HIền", "Lê Phan Đan Khanh", "Vũ Phương Nga", "Nguyễn Diễm Ngọc", "Đỗ Quyên", "Tạ Thục Quyên", "Nguyễn Bùi Bảo Trâm", "Nguyễn Lê Phương Trang", "Nguyễn Thị Thu Trang", "Trần Nhật Thùy Trang", "Nguyễn Trần Bảo Uyên", "Chu Mỹ Duyên"];
+const messages = {
+  "": "Lan ơi 🌸 Chúc bạn luôn rạng rỡ, vui tươi và tràn đầy năng lượng nha!",
+  "": "Hà dịu dàng, thông minh – chúc bạn luôn hạnh phúc và thành công 💕",
+  "": "Linh dễ thương ơi, chúc bạn luôn cười thật nhiều và học thật giỏi nhé!",
+  "": "Trang à, chúc bạn ngày càng xinh đẹp, tự tin và mạnh mẽ 💐",
+  "": "Vy ơi 💖 Chúc bạn luôn là bông hoa tỏa hương trong lớp 11G4!",
+  "": "Ngọc như tên – luôn tỏa sáng và được mọi người yêu quý 🌷",
+  "": "Mai ơi, chúc bạn lúc nào cũng tươi như hoa và đạt nhiều thành tích nhé 🌸",
+  "": "Nhung dịu dàng và đáng yêu, chúc bạn ngày 20-10 thật hạnh phúc 💞",
+  "": "Phương xinh ơi, chúc bạn gặp nhiều may mắn và luôn mỉm cười 🌼",
+  "": "Thảo năng động và tốt bụng – chúc bạn có một ngày 20-10 thật vui nhé 💖"
+};
+function suggestName() {
+  const val = document.getElementById("searchInput").value.toLowerCase();
+  const sugg = document.getElementById("suggestions");
+  sugg.innerHTML = "";
+  if(val === "") return;
+  names.filter(n => n.toLowerCase().includes(val))
+    .forEach(n => {
+      const li = document.createElement("li");
+      li.textContent = n;
+      li.style.cursor = "pointer";
+      li.onclick = () => showMessage(n);
+      sugg.appendChild(li);
+    });
+}
+function showMessage(name) {
+  nextPage(4);
+  document.getElementById("personalMessage").textContent = messages[name] || "Lời chúc đang được cập nhật 💖";
+}
+
+// Hoa rơi 🌸
+setInterval(() => {
+  const flower = document.createElement("div");
+  flower.classList.add("sakura");
+  flower.textContent = "🌸";
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.fontSize = Math.random() * 20 + 10 + "px";
+  flower.style.animationDuration = 5 + Math.random() * 5 + "s";
+  document.body.appendChild(flower);
+  setTimeout(() => flower.remove(), 10000);
+}, 400);
+</script>
+</body>
+</html>
