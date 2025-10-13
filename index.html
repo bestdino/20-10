@@ -5,62 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🎁 Nhập mật khẩu 🎀</title>
   <style>
-    body {
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: 'Poppins', sans-serif;
-      color: #333;
-      text-align: center;
-      animation: fadeIn 1.5s ease-in;
-    }
+  body {
+    background: linear-gradient(135deg, #f3f3f3, #d0e6ff);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  .password-box {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+  }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 12px 0;
+    border: 2px solid #66ccff; /* xanh dương nhạt */
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+  }
 
-    input {
-      padding: 10px 15px;
-      border: none;
-      border-radius: 10px;
-      outline: none;
-      font-size: 1rem;
-      text-align: center;
-      margin-bottom: 15px;
-    }
+  input[type="password"]:focus {
+    border-color: #3399ff;
+  }
 
-    button {
-      background-color: #ff7eb3;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: 0.3s;
-    }
+  button {
+    background: #66ccff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
 
-    button:hover {
-      background-color: #ff4f81;
-      transform: scale(1.05);
-    }
+  button:hover {
+    background: #3399ff;
+  }
 
-    .message {
-      margin-top: 15px;
-      color: #fff;
-      font-weight: bold;
-      text-shadow: 1px 1px 3px #00000050;
-    }
-  </style>
+  #message {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #66ccff; /* 🎨 màu xanh dương nhạt cho thông báo */
+  }
+</style>
 </head>
 <body>
   <h1>🔒 Nhập mật khẩu để mở món quà 20/10 🎁</h1>
