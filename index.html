@@ -1,6 +1,96 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎁 Nhập mật khẩu để mở quà 🎀</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #ff7eb3;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff4f81;
+      transform: scale(1.05);
+    }
+
+    .message {
+      margin-top: 15px;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px #00000050;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔒 Nhập mật khẩu để mở món quà 20/10 🎁</h1>
+  <input type="password" id="password" placeholder="Nhập mật khẩu..." />
+  <button onclick="checkPassword()">Mở quà 💝</button>
+  <div class="message" id="message"></div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("password").value.trim();
+      const message = document.getElementById("message");
+      
+      if (input === "20/10" || input === "2010") {
+        message.style.color = "#dfffdf";
+        message.innerText = "🎉 Đúng rồi! Chuẩn bị mở quà nha... 💖";
+        setTimeout(() => {
+          window.location.href = "mcvp_11g4_20_11_flower.html";
+        }, 1500);
+      } else {
+        message.style.color = "#ffdddd";
+        message.innerText = "😜 Hình như bạn chưa nhớ ngày đặc biệt này đâu nha!";
+      }
+    }
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chúc mừng 20-10 | 11G4 MCVP</title>
