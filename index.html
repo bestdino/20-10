@@ -209,5 +209,32 @@ setInterval(() => {
   setTimeout(() => flower.remove(), 10000);
 }, 400);
 </script>
+  <!-- Hello Kitty animation -->
+<div class="hello-kitty"></div>
+
+<style>
+.hello-kitty {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  background: url('https://i.imgur.com/4JXvDVi.png') center/contain no-repeat;
+  opacity: 0.15;
+  transform: translate(-50%, -50%);
+  animation: blink 4s infinite;
+  pointer-events: none; /* không che nút bấm */
+  z-index: 0; /* nằm dưới nội dung */
+}
+
+@keyframes blink {
+  0%, 90%, 100% {
+    background-image: url('https://i.imgur.com/4JXvDVi.png'); /* mắt mở */
+  }
+  92%, 98% {
+    background-image: url('https://i.imgur.com/5gSL5yE.png'); /* mắt nhắm */
+  }
+}
+</style>
 </body>
 </html>
