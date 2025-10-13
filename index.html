@@ -5,59 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🎁 Nhập mật khẩu 🎀</title>
   <style>
-  body {
-    background: linear-gradient(135deg, #f3f3f3, #d0e6ff);
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-
-  .password-box {
-    background: white;
-    padding: 30px 40px;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 300px;
-  }
-
-  input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 12px 0;
-    border: 2px solid #66ccff; /* xanh dương nhạt */
-    border-radius: 8px;
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s;
-  }
-
-  input[type="password"]:focus {
-    border-color: #3399ff;
-  }
-
-  button {
-    background: #66ccff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  button:hover {
-    background: #3399ff;
-  }
-
   #message {
     margin-top: 15px;
     font-weight: bold;
-    color: #66ccff; /* 🎨 màu xanh dương nhạt cho thông báo */
+    transition: color 0.4s ease;
+  }
+
+  /* Khi sai mật khẩu */
+  #message.error {
+    color: #3399ff; /* xanh dương nhạt, dễ nhìn hơn nền */
+  }
+
+  /* Khi đúng mật khẩu */
+  #message.success {
+    color: #00ccff; /* xanh sáng hơn tí để nổi bật */
   }
 </style>
 </head>
