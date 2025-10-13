@@ -168,16 +168,26 @@ function nextPage(n) {
 // Gợi ý tên
 const names = ["Lưu Mai Huyền anh", "Nguyễn Ngân Hà Anh", "Phạm Hà Anh", "Trần Vũ Minh Anh", "Trương Ngọc Bảo Anh", "Nguyễn Phương Chi", "Lê Thùy Dương", "Bùi Việt Hà", "Nguyễn Bùi Ngọc HIền", "Lê Phan Đan Khanh", "Vũ Phương Nga", "Nguyễn Diễm Ngọc", "Đỗ Quyên", "Tạ Thục Quyên", "Nguyễn Bùi Bảo Trâm", "Nguyễn Lê Phương Trang", "Nguyễn Thị Thu Trang", "Trần Nhật Thùy Trang", "Nguyễn Trần Bảo Uyên", "Chu Mỹ Duyên"];
 const messages = {
-  "": "Lan ơi 🌸 Chúc bạn luôn rạng rỡ, vui tươi và tràn đầy năng lượng nha!",
-  "": "Hà dịu dàng, thông minh – chúc bạn luôn hạnh phúc và thành công 💕",
-  "": "Linh dễ thương ơi, chúc bạn luôn cười thật nhiều và học thật giỏi nhé!",
-  "": "Trang à, chúc bạn ngày càng xinh đẹp, tự tin và mạnh mẽ 💐",
-  "": "Vy ơi 💖 Chúc bạn luôn là bông hoa tỏa hương trong lớp 11G4!",
-  "": "Ngọc như tên – luôn tỏa sáng và được mọi người yêu quý 🌷",
-  "": "Mai ơi, chúc bạn lúc nào cũng tươi như hoa và đạt nhiều thành tích nhé 🌸",
-  "": "Nhung dịu dàng và đáng yêu, chúc bạn ngày 20-10 thật hạnh phúc 💞",
-  "": "Phương xinh ơi, chúc bạn gặp nhiều may mắn và luôn mỉm cười 🌼",
-  "": "Thảo năng động và tốt bụng – chúc bạn có một ngày 20-10 thật vui nhé 💖"
+  "Lưu Mai Huyền anh": "Lan ơi 🌸 Chúc bạn luôn rạng rỡ, vui tươi và tràn đầy năng lượng nha!",
+  "Nguyễn Ngân Hà Anh": "Hà dịu dàng, thông minh – chúc bạn luôn hạnh phúc và thành công 💕",
+  "Phạm Hà Anh": "Linh dễ thương ơi, chúc bạn luôn cười thật nhiều và học thật giỏi nhé!",
+  "Trần Vũ Minh Anh": "Trang à, chúc bạn ngày càng xinh đẹp, tự tin và mạnh mẽ 💐",
+  "Trương Ngọc Bảo Anh": "Vy ơi 💖 Chúc bạn luôn là bông hoa tỏa hương trong lớp 11G4!",
+  "Nguyễn Phương Chi": "Ngọc như tên – luôn tỏa sáng và được mọi người yêu quý 🌷",
+  "Lê Thùy Dương": "Mai ơi, chúc bạn lúc nào cũng tươi như hoa và đạt nhiều thành tích nhé 🌸",
+  "Bùi Việt Hà": "Nhung dịu dàng và đáng yêu, chúc bạn ngày 20-10 thật hạnh phúc 💞",
+  "Nguyễn Bùi Ngọc HIền": "Phương xinh ơi, chúc bạn gặp nhiều may mắn và luôn mỉm cười 🌼",
+  "Lê Phan Đan Khanh": "Thảo năng động và tốt bụng – chúc bạn có một ngày 20-10 thật vui nhé 💖"
+  "Vũ Phương Nga": "Lan ơi 🌸 Chúc bạn luôn rạng rỡ, vui tươi và tràn đầy năng lượng nha!",
+  "Nguyễn Diễm Ngọc": "Hà dịu dàng, thông minh – chúc bạn luôn hạnh phúc và thành công 💕",
+  "Đỗ Quyên": "Linh dễ thương ơi, chúc bạn luôn cười thật nhiều và học thật giỏi nhé!",
+  "Tạ Thục Quyên": "Trang à, chúc bạn ngày càng xinh đẹp, tự tin và mạnh mẽ 💐",
+  "Nguyễn Bùi Bảo Trâm": "Vy ơi 💖 Chúc bạn luôn là bông hoa tỏa hương trong lớp 11G4!",
+  "Nguyễn Lê Phương Trang": "Ngọc như tên – luôn tỏa sáng và được mọi người yêu quý 🌷",
+  "Nguyễn Thị Thu Trang": "Mai ơi, chúc bạn lúc nào cũng tươi như hoa và đạt nhiều thành tích nhé 🌸",
+  "Trần Nhật Thùy Trang": "Nhung dịu dàng và đáng yêu, chúc bạn ngày 20-10 thật hạnh phúc 💞",
+  "Nguyễn Trần Bảo Uyên": "Phương xinh ơi, chúc bạn gặp nhiều may mắn và luôn mỉm cười 🌼",
+  "Chu Mỹ Duyên": "Thảo năng động và tốt bụng – chúc bạn có một ngày 20-10 thật vui nhé 💖"
 };
 function suggestName() {
   const val = document.getElementById("searchInput").value.toLowerCase();
