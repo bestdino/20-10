@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -126,13 +125,13 @@ button:hover { background: #ff7aa3; }
 <!-- Trang 2 -->
 <section id="page2">
   <div class="img-container">
-    <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t1.15752-9/553112269_1170990681597465_1206101863126046614_n.png?_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_ohc=pluXhZHgVFsQ7kNvwGTpZlL&_nc_oc=Adn2y5ofE6biFQexHonnMZZNe4TAF25KXptmh8XS-9NNANXF-ea1zr81MnxVaGMQTQo&_nc_zt=23&_nc_ht=scontent.fhan14-4.fna&oh=03_Q7cD3gHnUgsVvfm6lL_L0ULVeQXbCxB09pcY9OALUSaFmfbqMg&oe=6913430B" alt="Ảnh lớp">
+    <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t1.15752-9/553112269_1170990681597465_1206101863126046614_n.png" alt="Ảnh lớp">
   </div>
   <p class="fade-text">Xin lỗi vì sự tổ chức muộn màng của chúng tớ<br>
     Nhân ngày Phụ nữ Việt Nam 20-10 <br>
   Tớ xin gửi những lời chúc tốt đẹp nhất đến tất cả các bạn nữ trong lớp.<br>
   Chúc các bạn luôn xinh đẹp, tự tin, học giỏi và gặp nhiều niềm vui trong cuộc sống.<br>
-  Các bạn chính là những bông hoa tuyệt vời nhất của 11G4 </p>
+  Các bạn chính là những bông hoa tuyệt vời nhất của 11G4 💐</p>
   <button onclick="nextPage(3)">Next</button>
 </section>
 
@@ -147,23 +146,25 @@ button:hover { background: #ff7aa3; }
 </section>
 
 <!-- Trang 4 -->
-<!-- Trang 4 -->
-<section id="page4">
+<section id="page4" style="text-align: center;">
   <h1>💖 Lời chúc riêng 💖</h1>
-  <div id="personalMessage"></div>
-  
-  <!-- Nút sang trang mới -->
-  <button onclick="window.location.href='https://test2008.vercel.app'">Tiếp tục 💘</button>
-
-  <!-- Nút quay lại đầu -->
-  <button onclick="nextPage(1)">Quay lại đầu</button>
+  <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; margin-top: 20px;">
+    <img id="friendImage" src="" alt="Ảnh bạn"
+         style="width: 220px; height: 220px; border-radius: 20px; object-fit: cover; box-shadow: 0 0 15px rgba(0,0,0,0.3);">
+    <div id="personalMessage"
+         style="max-width: 400px; font-size: 18px; color: #fff; background: rgba(255,255,255,0.15); padding: 20px; border-radius: 15px;">
+      Lời chúc của bạn sẽ hiện ở đây 💐
+    </div>
+  </div>
+  <button onclick="window.location.href='https://test2008.vercel.app'"
+          style="margin-top: 30px; padding: 10px 20px; font-size: 16px; border: none; border-radius: 10px; background: #ff69b4; color: white; cursor: pointer;">
+    💫 Sang trang cuối
+  </button>
 </section>
-
-
 
 <!-- Nhạc nền -->
 <audio id="bgm" autoplay loop>
-  <source src="https://vt.tiktok.com/ZSUU6bDWT/" type="audio/mpeg">
+  <source src="/static/nhac.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -174,30 +175,58 @@ function nextPage(n) {
   if(n === 2) document.getElementById("bgm").play();
 }
 
-// Gợi ý tên
+// Danh sách tên
 const names = ["Lưu Mai Huyền anh", "Nguyễn Ngân Hà Anh", "Phạm Hà Anh", "Trần Vũ Minh Anh", "Trương Ngọc Bảo Anh", "Nguyễn Phương Chi", "Lê Thùy Dương", "Bùi Việt Hà", "Nguyễn Bùi Ngọc Hiền", "Lê Phan Đan Khanh", "Vũ Phương Nga", "Nguyễn Diễm Ngọc", "Đỗ Quyên", "Tạ Thục Quyên", "Nguyễn Bùi Bảo Trâm", "Nguyễn Lê Phương Trang", "Nguyễn Thị Thu Trang", "Trần Nhật Thùy Trang", "Nguyễn Trần Bảo Uyên", "Chu Mỹ Duyên"];
+
+// Lời chúc riêng
 const messages = {
-  "Lưu Mai Huyền anh": "Lan ơi 🌸 Chúc bạn luôn rạng rỡ, vui tươi và tràn đầy năng lượng nha!",
-  "Nguyễn Ngân Hà Anh": "Hà dịu dàng, thông minh – chúc bạn luôn hạnh phúc và thành công 💕",
-  "Phạm Hà Anh": "Linh dễ thương ơi, chúc bạn luôn cười thật nhiều và học thật giỏi nhé!",
-  "Trần Vũ Minh Anh": "Trang à, chúc bạn ngày càng xinh đẹp, tự tin và mạnh mẽ 💐",
-  "Trương Ngọc Bảo Anh": "Vy ơi 💖 Chúc bạn luôn là bông hoa tỏa hương trong lớp 11G4!",
-  "Nguyễn Phương Chi": "Ngọc như tên – luôn tỏa sáng và được mọi người yêu quý 🌷",
-  "Lê Thùy Dương": "Mai ơi, chúc bạn lúc nào cũng tươi như hoa và đạt nhiều thành tích nhé 🌸",
-  "Bùi Việt Hà": "Nhung dịu dàng và đáng yêu, chúc bạn ngày 20-10 thật hạnh phúc 💞",
-  "Nguyễn Bùi Ngọc Hiền": "Phương xinh ơi, chúc bạn gặp nhiều may mắn và luôn mỉm cười 🌼",
-  "Lê Phan Đan Khanh": "Thảo năng động và tốt bụng – chúc bạn có một ngày 20-10 thật vui nhé 💖",
-  "Vũ Phương Nga": "Lan ơi 🌸 Chúc bạn luôn rạng rỡ, vui tươi và tràn đầy năng lượng nha!",
-  "Nguyễn Diễm Ngọc": "Hà dịu dàng, thông minh – chúc bạn luôn hạnh phúc và thành công 💕",
-  "Đỗ Quyên": "Linh dễ thương ơi, chúc bạn luôn cười thật nhiều và học thật giỏi nhé!",
-  "Tạ Thục Quyên": "Trang à, chúc bạn ngày càng xinh đẹp, tự tin và mạnh mẽ 💐",
-  "Nguyễn Bùi Bảo Trâm": "Vy ơi 💖 Chúc bạn luôn là bông hoa tỏa hương trong lớp 11G4!",
-  "Nguyễn Lê Phương Trang": "Ngọc như tên – luôn tỏa sáng và được mọi người yêu quý 🌷",
-  "Nguyễn Thị Thu Trang": "Mai ơi, chúc bạn lúc nào cũng tươi như hoa và đạt nhiều thành tích nhé 🌸",
-  "Trần Nhật Thùy Trang": "Nhung dịu dàng và đáng yêu, chúc bạn ngày 20-10 thật hạnh phúc 💞",
-  "Nguyễn Trần Bảo Uyên": "Phương xinh ơi, chúc bạn gặp nhiều may mắn và luôn mỉm cười 🌼",
-  "Chu Mỹ Duyên": "Thảo năng động và tốt bụng – chúc bạn có một ngày 20-10 thật vui nhé 💖"
+  "Lưu Mai Huyền anh": "Chúc bạn luôn xinh đẹp, vui tươi và rạng rỡ như hoa nhé 🌸",
+  "Nguyễn Ngân Hà Anh": "Chúc Hà Anh luôn tự tin và hạnh phúc trong từng khoảnh khắc 💕",
+  "Phạm Hà Anh": "Ngày 20-10 thật nhiều niềm vui và bất ngờ đáng yêu nhé 💐",
+  "Trần Vũ Minh Anh": "Chúc bạn ngày càng xinh đẹp và học giỏi hơn nữa 💖",
+  "Trương Ngọc Bảo Anh": "Chúc Bảo Anh mãi là cô gái đáng yêu và luôn mỉm cười 🌷",
+  "Nguyễn Phương Chi": "Chúc Phương Chi luôn rạng ngời như ánh mặt trời 🌞",
+  "Lê Thùy Dương": "Dương ơi, chúc bạn 20-10 thật vui vẻ và ngọt ngào 💗",
+  "Bùi Việt Hà": "Hà luôn là cô gái nhẹ nhàng, chúc bạn hạnh phúc và vui vẻ nhé 🌸",
+  "Nguyễn Bùi Ngọc Hiền": "Hiền xinh ơi, chúc bạn luôn vui tươi và học tốt nha 💕",
+  "Lê Phan Đan Khanh": "Đan Khanh năng động, chúc bạn luôn mạnh mẽ và tự tin 💫",
+  "Vũ Phương Nga": "Chúc Phương Nga luôn đáng yêu, học giỏi và may mắn 🌹",
+  "Nguyễn Diễm Ngọc": "Ngọc dịu dàng, chúc bạn hạnh phúc và thật nhiều niềm vui 💖",
+  "Đỗ Quyên": "Quyên luôn rạng rỡ, chúc bạn tỏa sáng trong mọi khoảnh khắc 🌟",
+  "Tạ Thục Quyên": "Chúc bạn có một ngày 20-10 thật tuyệt vời và đáng nhớ 💐",
+  "Nguyễn Bùi Bảo Trâm": "Trâm dễ thương, chúc bạn cười thật nhiều và vui cả năm 💕",
+  "Nguyễn Lê Phương Trang": "Trang xinh đẹp, chúc bạn luôn tràn đầy năng lượng 🌸",
+  "Nguyễn Thị Thu Trang": "Thu Trang dễ mến, chúc bạn luôn hạnh phúc và an yên 💗",
+  "Trần Nhật Thùy Trang": "Thùy Trang ơi, chúc bạn luôn cười tươi và học giỏi nhé 💖",
+  "Nguyễn Trần Bảo Uyên": "Bảo Uyên đáng yêu, chúc bạn luôn vui vẻ, yêu đời 🌷",
+  "Chu Mỹ Duyên": "Mỹ Duyên ơi, chúc bạn 20-10 thật đặc biệt và ngập tràn yêu thương 💕"
 };
+
+// 🔗 Link ảnh từng người (thay link thật vào đây)
+const images = {
+  "Lưu Mai Huyền anh": "https://link1.jpg",
+  "Nguyễn Ngân Hà Anh": "https://link2.jpg",
+  "Phạm Hà Anh": "https://link3.jpg",
+  "Trần Vũ Minh Anh": "https://link4.jpg",
+  "Trương Ngọc Bảo Anh": "https://link5.jpg",
+  "Nguyễn Phương Chi": "https://link6.jpg",
+  "Lê Thùy Dương": "https://link7.jpg",
+  "Bùi Việt Hà": "https://link8.jpg",
+  "Nguyễn Bùi Ngọc Hiền": "https://link9.jpg",
+  "Lê Phan Đan Khanh": "https://link10.jpg",
+  "Vũ Phương Nga": "https://link11.jpg",
+  "Nguyễn Diễm Ngọc": "https://link12.jpg",
+  "Đỗ Quyên": "https://link13.jpg",
+  "Tạ Thục Quyên": "https://link14.jpg",
+  "Nguyễn Bùi Bảo Trâm": "https://link15.jpg",
+  "Nguyễn Lê Phương Trang": "https://link16.jpg",
+  "Nguyễn Thị Thu Trang": "https://link17.jpg",
+  "Trần Nhật Thùy Trang": "https://link18.jpg",
+  "Nguyễn Trần Bảo Uyên": "https://link19.jpg",
+  "Chu Mỹ Duyên": "https://link20.jpg"
+};
+
+// Khi gõ tên → gợi ý
 function suggestName() {
   const val = document.getElementById("searchInput").value.toLowerCase();
   const sugg = document.getElementById("suggestions");
@@ -212,9 +241,12 @@ function suggestName() {
       sugg.appendChild(li);
     });
 }
+
+// Khi chọn tên → hiện ảnh + lời chúc
 function showMessage(name) {
   nextPage(4);
   document.getElementById("personalMessage").textContent = messages[name] || "Lời chúc đang được cập nhật 💖";
+  document.getElementById("friendImage").src = images[name] || "https://i.imgur.com/ZKZC4Zt.png";
 }
 
 // Hoa rơi 🌸
@@ -229,9 +261,9 @@ setInterval(() => {
   setTimeout(() => flower.remove(), 10000);
 }, 400);
 </script>
-  <!-- Hello Kitty animation -->
-<div class="hello-kitty"></div>
 
+<!-- Hello Kitty animation -->
+<div class="hello-kitty"></div>
 <style>
 .hello-kitty {
   position: fixed;
@@ -243,17 +275,12 @@ setInterval(() => {
   opacity: 0.15;
   transform: translate(-50%, -50%);
   animation: blink 4s infinite;
-  pointer-events: none; /* không che nút bấm */
-  z-index: 0; /* nằm dưới nội dung */
+  pointer-events: none;
+  z-index: 0;
 }
-
 @keyframes blink {
-  0%, 90%, 100% {
-    background-image: url('blob:https://www.facebook.com/8d96d388-e189-4f95-986b-af45fe32c3b1'); /* mắt mở */
-  }
-  92%, 98% {
-    background-image: url('blob:https://www.facebook.com/70d543ea-d9c3-4fb9-adb0-b3c60f657f96'); /* mắt nhắm */
-  }
+  0%, 90%, 100% { background-image: url('https://i.imgur.com/4JXvDVi.png'); }
+  92%, 98% { background-image: url('https://i.imgur.com/ZKZC4Zt.png'); }
 }
 </style>
 </body>
