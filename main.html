@@ -94,24 +94,11 @@ button:hover { background: #ff7aa3; }
 
 /* Lời chúc riêng */
 #personalMessage {
-  max-width: 420px;
-  font-size: 20px;
-  font-weight: 600;
-  color: #000000; /* chữ đen */
-  background: rgba(255, 255, 255, 0.85);
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-  line-height: 1.6;
-  text-shadow: none;
-  animation: fadeIn 1s ease forwards;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #444;
+  padding: 20px;
 }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 
 /* Hoa rơi */
 .sakura {
@@ -144,7 +131,7 @@ button:hover { background: #ff7aa3; }
     Nhân ngày Phụ nữ Việt Nam 20-10 <br>
   Tớ xin gửi những lời chúc tốt đẹp nhất đến tất cả các bạn nữ trong lớp.<br>
   Chúc các bạn luôn xinh đẹp, tự tin, học giỏi và gặp nhiều niềm vui trong cuộc sống.<br>
-  Các bạn chính là những bông hoa tuyệt vời nhất của 11G4 💐</p>
+  Các bạn chính là những bông hoa tuyệt vời nhất của 11G4 </p>
   <button onclick="nextPage(3)">Next</button>
 </section>
 
@@ -159,25 +146,23 @@ button:hover { background: #ff7aa3; }
 </section>
 
 <!-- Trang 4 -->
-<section id="page4" style="text-align: center;">
+<!-- Trang 4 -->
+<section id="page4">
   <h1>💖 Lời chúc riêng 💖</h1>
-  <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; margin-top: 20px;">
-    <img id="friendImage" src="" alt="Ảnh bạn"
-         style="width: 220px; height: 220px; border-radius: 20px; object-fit: cover; box-shadow: 0 0 15px rgba(0,0,0,0.3);">
-    <div id="personalMessage"
-         style="max-width: 400px; font-size: 18px; color: #fff; background: rgba(255,255,255,0.15); padding: 20px; border-radius: 15px;">
-      Lời chúc của bạn sẽ hiện ở đây 💐
-    </div>
-  </div>
-  <button onclick="window.location.href='https://test2008.vercel.app'"
-          style="margin-top: 30px; padding: 10px 20px; font-size: 16px; border: none; border-radius: 10px; background: #ff69b4; color: white; cursor: pointer;">
-    💫 Sang trang cuối
-  </button>
+  <div id="personalMessage"></div>
+  
+  <!-- Nút sang trang mới -->
+  <button onclick="window.location.href='https://test2008.vercel.app'">Tiếp tục 💘</button>
+
+  <!-- Nút quay lại đầu -->
+  <button onclick="nextPage(1)">Quay lại đầu</button>
 </section>
+
+
 
 <!-- Nhạc nền -->
 <audio id="bgm" autoplay loop>
-  <source src="/static/nhac.mp3" type="audio/mpeg">
+  <source src="https://vt.tiktok.com/ZSUU6bDWT/" type="audio/mpeg">
 </audio>
 
 <script>
