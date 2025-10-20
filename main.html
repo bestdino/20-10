@@ -94,11 +94,24 @@ button:hover { background: #ff7aa3; }
 
 /* Lời chúc riêng */
 #personalMessage {
-  font-size: 1.2rem;
-  text-align: center;
-  color: #444;
-  padding: 20px;
+  max-width: 420px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ff2e76; /* hồng đậm dễ nhìn */
+  background: rgba(255, 240, 250, 0.9);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 150, 180, 0.3);
+  line-height: 1.6;
+  text-shadow: 0 0 5px rgba(255, 170, 200, 0.8);
+  animation: fadeIn 1s ease forwards;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 /* Hoa rơi */
 .sakura {
