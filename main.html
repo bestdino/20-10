@@ -97,15 +97,18 @@ button:hover { background: #ff7aa3; }
   max-width: 420px;
   font-size: 20px;
   font-weight: 600;
-  color: #000; /* Màu chữ đen rõ ràng */
+  color: #000; /* Màu chữ đen */
   background: rgba(255, 240, 250, 0.9);
   padding: 25px;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(255, 150, 180, 0.3);
   line-height: 1.6;
-  text-shadow: none; /* Bỏ sáng chữ */
+  text-shadow: none;
   animation: fadeIn 1s ease forwards;
+  position: relative;
+  z-index: 10; /* ép lên trên nền */
 }
+
 
 /* Hoa rơi */
 .sakura {
