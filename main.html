@@ -94,19 +94,21 @@ button:hover { background: #ff7aa3; }
 
 /* Lời chúc riêng */
 #personalMessage {
-  max-width: 400px;
-  font-size: 18px;
-  font-weight: 500;
-  color: #ff4b91;
-  background: linear-gradient(135deg, rgba(255,240,245,0.8), rgba(255,200,215,0.6));
-  padding: 20px;
+  max-width: 420px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000; /* chữ đen */
+  background: rgba(255, 255, 255, 0.85);
+  padding: 25px;
   border-radius: 20px;
-  box-shadow: 0 0 15px rgba(255,182,193,0.4);
-  animation: fadeIn 1.2s ease forwards;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  line-height: 1.6;
+  text-shadow: none;
+  animation: fadeIn 1s ease forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
